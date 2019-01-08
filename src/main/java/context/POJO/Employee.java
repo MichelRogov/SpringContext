@@ -14,6 +14,12 @@ public class Employee {
         this.age = age;
     }
 
+    public Employee(String name, int age, String country) {
+        this.name = name;
+        this.country = country;
+        this.age = age;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +

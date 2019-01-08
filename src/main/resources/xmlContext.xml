@@ -9,11 +9,24 @@
     <!--</bean>-->
 
     <!--All args constructor-->
+
+    <!--<bean id="employee" class="context.POJO.Employee">-->
+        <!--<constructor-arg value="Alex"/>-->
+        <!--<constructor-arg value="49"/>-->
+        <!--<constructor-arg value="20"/>-->
+    <!--</bean>-->
+
     <bean id="employee" class="context.POJO.Employee">
-        <constructor-arg index="2" value="30"></constructor-arg>
-        <constructor-arg index="1" value="Germany"></constructor-arg>
-        <constructor-arg index="0" value="Alex"></constructor-arg>
+        <constructor-arg value="Alex" type="java.lang.String"/>
+        <constructor-arg value="49" type="java.lang.String"/>
+        <constructor-arg value="20" type="int"/>
     </bean>
+
+    <!--<bean id="employee" class="context.POJO.Employee">-->
+        <!--<constructor-arg index="2" value="30"></constructor-arg>-->
+        <!--<constructor-arg index="1" value="Germany"></constructor-arg>-->
+        <!--<constructor-arg index="0" value="Alex"></constructor-arg>-->
+    <!--</bean>-->
 
     <bean id="address" class="context.POJO.Address"></bean>
 
@@ -23,4 +36,18 @@
         <!--<constructor-arg ref="address"></constructor-arg>-->
         <!--<constructor-arg ref="employee"></constructor-arg>-->
     </bean>
+
+    <!--<bean id="myXmlList" class="context.POJO.MyXmlList">-->
+        <!--<property name="myList">-->
+            <!--<list value-type="context.POJO.ListClass">-->
+                <!--<ref bean="listClass1"/>-->
+                <!--<ref bean="listClass2"/>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <bean id="myXmlList" class="context.POJO.MyXmlList" autowire="byType"/>
+
+    <bean id="listClass1" class="context.POJO.ListClass1"/>
+    <bean id="listClass2" class="context.POJO.ListClass2"/>
 </beans>
